@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".ui.Main">
+
+
+    <ImageView
+        android:id="@+id/menu"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_baseline_menu_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/rsl"
+        android:text="Hong Kong"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/current_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menu" />
+
+    <ImageView
+        android:id="@+id/change_city"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.0"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/current_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/rsl"
+        android:text="Mon, 1:20 am"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="@+id/city_name"
+        app:layout_constraintStart_toStartOf="@+id/city_name"
+        app:layout_constraintTop_toBottomOf="@+id/city_name" />
+
+    <ImageView
+        android:id="@+id/weather_state_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_baseline_wb_sunny_24"
+        app:layout_constraintBottom_toTopOf="@+id/temp_text"
+        app:layout_constraintStart_toStartOf="@+id/temp_text"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/weather_State_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/rsl"
+        android:text="Sunny"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/weather_state_image"
+        app:layout_constraintStart_toEndOf="@+id/weather_state_image"
+        app:layout_constraintTop_toTopOf="@+id/weather_state_image" />
+
+    <TextView
+        android:id="@+id/temp_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rsl"
+        android:text="23`"
+        android:textColor="@color/white"
+        android:textSize="122sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temp_day_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rsl"
+        android:text="28`C"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toTopOf="@+id/temp_night_text"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/temp_night_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rsl"
+        android:text="28`C"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="64dp"
+        android:layout_height="2dp"
+        android:layout_marginBottom="84dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/temp_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toEndOf="@+id/temp_text" />
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/line_chart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+</androidx.constraintlayout.widget.ConstraintLayout>
